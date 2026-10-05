@@ -1,0 +1,11 @@
+order_item_id,order_id,product_name,quantity,unit_price
+1,1001,Laptop,1,75000
+2,1002,Mouse,2,1200
+3,1003,Keyboard,1,2500
+4,1004,Monitor,1,15000
+5,1005,Headphones,2,1750
+6,1006,Printer,1,12000
+7,1007,Webcam,1,8500
+8,1008,Keyboard,1,4500
+9,1009,Mobile Phone,1,22000
+10,1010,Mouse,1,1800

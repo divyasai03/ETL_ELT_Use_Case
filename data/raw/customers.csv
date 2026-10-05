@@ -1,0 +1,11 @@
+customer_id,customer_name,email,city
+C001,Divya Sai,divya@example.com,Hyderabad
+C002,Rahul Kumar,rahul@example.com,Bangalore
+C003,Priya Sharma,priya@example.com,Chennai
+C004,Arjun Reddy,arjun@example.com,Hyderabad
+C005,Sneha Rao,sneha@example.com,Pune
+C006,Kiran Kumar,kiran@example.com,Mumbai
+C007,Anjali Singh,anjali@example.com,Delhi
+C008,Vikram Patel,vikram@example.com,Ahmedabad
+C009,Neha Gupta,neha@example.com,Kolkata
+C010,Rohit Verma,rohit@example.com,Jaipur
