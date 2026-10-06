@@ -3,19 +3,14 @@ import uuid
 from datetime import datetime
 
 import pandas as pd
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import URL
+from sqlalchemy import text
+
+from db_config import get_engine
 
 
 # =========================================================
 # CONFIGURATION
 # =========================================================
-
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "mysql@123"
-MYSQL_HOST = "localhost"
-MYSQL_PORT = 3306
-MYSQL_DATABASE = "airflow_etl_db"
 
 PIPELINE_NAME = "ecommerce_etl_pipeline"
 
@@ -46,16 +41,7 @@ ERROR_DIR = os.path.join(
 # MYSQL CONNECTION
 # =========================================================
 
-connection_url = URL.create(
-    drivername="mysql+pymysql",
-    username=MYSQL_USER,
-    password=MYSQL_PASSWORD,
-    host=MYSQL_HOST,
-    port=MYSQL_PORT,
-    database=MYSQL_DATABASE,
-)
-
-engine = create_engine(connection_url)
+engine = get_engine()
 
 
 # =========================================================

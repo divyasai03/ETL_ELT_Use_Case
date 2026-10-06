@@ -1,35 +1,21 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import URL
+from sqlalchemy import text
+
+from db_config import get_engine
 
 
 # =========================================================
 # MYSQL CONNECTION
 # =========================================================
 
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "mysql@123"
-MYSQL_HOST = "localhost"
-MYSQL_PORT = 3306
-MYSQL_DATABASE = "airflow_etl_db"
-
 
 # =========================================================
 # CREATE CONNECTION
 # =========================================================
 
-connection_url = URL.create(
-    drivername="mysql+pymysql",
-    username=MYSQL_USER,
-    password=MYSQL_PASSWORD,
-    host=MYSQL_HOST,
-    port=MYSQL_PORT,
-    database=MYSQL_DATABASE,
-)
-
-engine = create_engine(connection_url)
+engine = get_engine()
 
 
 # =========================================================
@@ -146,3 +132,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

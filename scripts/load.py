@@ -1,8 +1,9 @@
 from pathlib import Path
 
 import pandas as pd
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import URL
+from sqlalchemy import text
+
+from db_config import get_engine
 
 
 # =========================================================
@@ -15,30 +16,15 @@ PROCESSED_DATA_DIR = PROJECT_ROOT / "data" / "processed"
 
 
 # =========================================================
-# MYSQL CONNECTION DETAILS
+# MYSQL CONNECTION
 # =========================================================
-
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "mysql@123"
-MYSQL_HOST = "localhost"
-MYSQL_PORT = 3306
-MYSQL_DATABASE = "airflow_etl_db"
 
 
 # =========================================================
 # CREATE MYSQL CONNECTION
 # =========================================================
 
-connection_url = URL.create(
-    drivername="mysql+pymysql",
-    username=MYSQL_USER,
-    password=MYSQL_PASSWORD,
-    host=MYSQL_HOST,
-    port=MYSQL_PORT,
-    database=MYSQL_DATABASE,
-)
-
-engine = create_engine(connection_url)
+engine = get_engine()
 
 
 # =========================================================
@@ -324,3 +310,4 @@ def load_data():
 
 if __name__ == "__main__":
     load_data()
+
